@@ -1,0 +1,19 @@
+# Reference: https://prettier.io/docs/options
+
+trailingComma: es5
+tabWidth: 2
+semi: true
+singleQuote: true
+plugins:
+    - '@trivago/prettier-plugin-sort-imports'
+importOrderParserPlugins:
+    - 'typescript'
+    - 'decorators-legacy'
+importOrder:
+    - <THIRD_PARTY_MODULES>
+    - ^src/app/shared/(.*)$
+    - ^src/app/(.*)$
+    - '^\./(.*)$'
+    - '^\.\./(.*)$'
+importOrderSeparation: true
+importOrderSortSpecifiers: true
