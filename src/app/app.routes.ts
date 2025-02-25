@@ -8,4 +8,8 @@ export const routes: Routes = [
     title: 'Home | Charteraise',
     component: HomeComponent,
   },
+  {
+    path: 'user',
+    component: HomeComponent,
+  },
 ];
