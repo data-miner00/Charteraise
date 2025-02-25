@@ -1,5 +1,19 @@
-<nav>
-  <a routerLink="/">Home</a>
-  |
-  <a routerLink="/user" routerLinkActive="text-green-500">User</a>
-</nav>
+<header class="navbar bg-base-100 shadow-sm">
+  <div class="flex-1">
+    <a routerLink="/" class="btn btn-ghost text-xl">Charteraise</a>
+  </div>
+  <nav class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li><a routerLink="/user" routerLinkActive="font-bold">User</a></li>
+      <li>
+        <details>
+          <summary>Parent</summary>
+          <ul class="bg-base-100 rounded-t-none p-2">
+            <li><a>Link 1</a></li>
+            <li><a>Link 2</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </nav>
+</header>
