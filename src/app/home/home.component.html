@@ -1,10 +1,8 @@
-<p>home works! {{ "hello" | uppercase }}</p>
-<p>Now is {{ now | date : "medium" }}</p>
-
 <google-chart
   [type]="type"
   title="My Daily Activities"
   [data]="data"
   [columns]="columns"
   style="width: 900px; height: 500px"
+  [options]="options"
 ></google-chart>

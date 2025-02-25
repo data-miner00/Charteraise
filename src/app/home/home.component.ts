@@ -1,11 +1,10 @@
-import { UpperCasePipe, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
   selector: 'app-home',
-  imports: [UpperCasePipe, DatePipe, GoogleChartsModule],
+  imports: [GoogleChartsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -20,4 +19,15 @@ export class HomeComponent {
   ];
   columns = ['Task', 'Hours per Day'];
   type = ChartType.PieChart;
+  options = {
+    // is3D: true,
+    pieHole: 0.4,
+    pieStartAngle: 100,
+    pieSliceText: 'label',
+    slices: {
+      0: { offset: 0.4 },
+    },
+    sliceVisibilityThreshold: 0.4,
+    backgroundColor: '#fef3e1',
+  };
 }
