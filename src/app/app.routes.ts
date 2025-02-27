@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { BarChartsComponent } from './views/bar-charts/bar-charts.component';
+import { PieChartsComponent } from './views/pie-charts/pie-charts.component';
 
 export const routes: Routes = [
   {
@@ -11,5 +13,15 @@ export const routes: Routes = [
   {
     path: 'user',
     component: HomeComponent,
+  },
+  {
+    path: 'pie-charts',
+    title: 'Pie Charts | Charteraise',
+    component: PieChartsComponent,
+  },
+  {
+    path: 'bar-charts',
+    title: 'Bar Charts | Charteraise',
+    component: BarChartsComponent,
   },
 ];
