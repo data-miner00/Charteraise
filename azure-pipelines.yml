@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+  - master
 
 pool: default
 
@@ -12,36 +12,40 @@ variables:
   pnpm_config_cache: $(Pipeline.Workspace)/.pnpm-store
 
 steps:
-- task: CmdLine@2
-  inputs:
-    script: |
-      echo  '$(System.DefaultWorkingDirectory)'
-      dir
-  displayName: Show working directory
-- task: NodeTool@0
-  inputs:
-    versionSpec: '22.x'
-  displayName: 'Install Node.js'
-- task: Cache@2
-  inputs:
-    key: 'pnpm | "$(Agent.OS)" | $(System.DefaultWorkingDirectory)/pnpm-lock.yaml'
-    path: $(pnpm_config_cache)
-  displayName: Cache pnpm
+  - task: CmdLine@2
+    inputs:
+      script: |
+        echo  '$(System.DefaultWorkingDirectory)'
+        dir
+    displayName: Show working directory
 
-- script: |
-    corepack enable
-    corepack prepare pnpm@latest-9 --activate
-  displayName: "Setup pnpm"
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '22.x'
+    displayName: 'Install Node.js'
 
-- script: pnpm config set store-dir $(pnpm_config_cache)
-  displayName: "Set pnpm store directory"
+  - task: Cache@2
+    inputs:
+      key: 'pnpm | "$(Agent.OS)" | $(System.DefaultWorkingDirectory)/pnpm-lock.yaml'
+      path: $(pnpm_config_cache)
+    displayName: Cache pnpm
 
-- script: |
-    pnpm install
-  displayName: "Install dependencies"
-- script: |
-    pnpm test
-  displayName: 'Run unit tests'
-- script: |
-    pnpm build
-  displayName: 'Build for production'
+  - script: |
+      corepack enable
+      corepack prepare pnpm@latest-9 --activate
+    displayName: 'Setup pnpm'
+
+  - script: pnpm config set store-dir $(pnpm_config_cache)
+    displayName: 'Set pnpm store directory'
+
+  - script: |
+      pnpm install
+    displayName: 'Install dependencies'
+
+  - script: |
+      pnpm test:headless
+    displayName: 'Run headless unit tests'
+
+  - script: |
+      pnpm build
+    displayName: 'Build for production'
