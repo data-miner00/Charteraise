@@ -1,6 +1,18 @@
-<aside class="flex flex-col items-center h-screen">
-  <div>Charteraise</div>
+<aside class="flex flex-col items-center h-screen bg-gray-400">
+  <div class="p-8">
+    <a routerLink="/" class="btn btn-ghost text-xl">Charteraise</a>
+  </div>
+
   <section class="">
-    <button class="btn btn-primary">Add chart</button>
+    <button class="btn btn-primary btn-lg">Add chart</button>
   </section>
+
+  <div class="flex flex-col items-center">
+    <a class="btn btn-wide" routerLink="/line-charts">Line Chart</a>
+    <a class="btn btn-wide" routerLink="/bar-charts">Bar Chart</a>
+    <button class="btn btn-wide" routerLink="/gauge-charts">Gauge Chart</button>
+    <button class="btn btn-wide">Geo Chart</button>
+    <button class="btn btn-wide" routerLink="/pie-charts">Pie Chart</button>
+    <button class="btn btn-wide">Sankey Chart</button>
+  </div>
 </aside>
