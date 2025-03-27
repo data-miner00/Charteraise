@@ -1,18 +1,35 @@
-<aside class="flex flex-col items-center h-screen bg-gray-400">
+<aside
+  class="flex flex-col h-screen border-r border-solid border-gray-300 w-1/5 fixed top-0 left-0 z-10"
+>
   <div class="p-8">
-    <a routerLink="/" class="btn btn-ghost text-xl">Charteraise</a>
+    <a routerLink="/" class="text-xl font-serif font-bold">Chârteraisé</a>
   </div>
 
-  <section class="">
-    <button class="btn btn-primary btn-lg">Add chart</button>
-  </section>
+  <nav class="p-4">
+    <ul>
+      @for (link of links; track link.name) {
+        <li class="my-2">
+          <a
+            [routerLink]="link.url"
+            class="p-3 rounded block hover:bg-gray-100 transition-colors duration-150"
+            routerLinkActive="bg-primary text-white hover:bg-primary"
+          >
+            <i class="bi" [class]="link.icon"></i>
+            &nbsp;
+            <span>
+              {{ link.name }}
+            </span>
+          </a>
+        </li>
+      } @empty {
+        <li>Home</li>
+      }
+    </ul>
+  </nav>
 
-  <div class="flex flex-col items-center">
-    <a class="btn btn-wide" routerLink="/line-charts">Line Chart</a>
-    <a class="btn btn-wide" routerLink="/bar-charts">Bar Chart</a>
-    <button class="btn btn-wide" routerLink="/gauge-charts">Gauge Chart</button>
-    <button class="btn btn-wide">Geo Chart</button>
-    <button class="btn btn-wide" routerLink="/pie-charts">Pie Chart</button>
-    <button class="btn btn-wide">Sankey Chart</button>
-  </div>
+  <footer class="mt-auto p-4">
+    <p class="text-xs text-gray-400">
+      &copy; 2025 Shaun Chong • All lefts reserved.
+    </p>
+  </footer>
 </aside>
