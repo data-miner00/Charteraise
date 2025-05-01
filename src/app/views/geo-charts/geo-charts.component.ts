@@ -19,4 +19,18 @@ export class GeoChartsComponent {
     width: 1000,
     region: 155,
   };
+
+  mysChartColumns = ['Country', 'Population', 'Area (sq. km)'];
+  mysChartData = [
+    ['Malaysia', 32_365_999, 329_847],
+    ['Singapore', 5_637_000, 728],
+  ];
+  mysChartOptions = {
+    region: 'MY',
+    colorAxis: { colors: ['green', 'blue'] },
+    width: 1000,
+    backgroundColor: '#a5f3fc',
+    defaultColor: '#fde047',
+    datalessRegionColor: '#fecaca',
+  };
 }
