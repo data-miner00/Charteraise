@@ -40,5 +40,10 @@ export class SidebarComponent {
       name: 'Pie Charts',
       icon: 'bi-pie-chart',
     },
+    {
+      url: '/histograms',
+      name: 'Histograms',
+      icon: 'bi-bar-chart-steps',
+    },
   ];
 }

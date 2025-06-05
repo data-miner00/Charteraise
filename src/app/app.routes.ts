@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { BarChartsComponent } from './views/bar-charts/bar-charts.component';
 import { GaugeChartsComponent } from './views/gauge-charts/gauge-charts.component';
 import { GeoChartsComponent } from './views/geo-charts/geo-charts.component';
+import { HistogramsComponent } from './views/histograms/histograms.component';
 import { LineChartsComponent } from './views/line-charts/line-charts.component';
 import { PieChartsComponent } from './views/pie-charts/pie-charts.component';
 
@@ -41,5 +42,10 @@ export const routes: Routes = [
     path: 'geo-charts',
     title: 'Geo Charts | Charteraise',
     component: GeoChartsComponent,
+  },
+  {
+    path: 'histograms',
+    title: 'Histograms | Charteraise',
+    component: HistogramsComponent,
   },
 ];
