@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
@@ -7,7 +7,11 @@ import { ChartType, GoogleChartsModule } from 'angular-google-charts';
   templateUrl: './gauge-charts.component.html',
   styleUrl: './gauge-charts.component.css',
 })
-export class GaugeChartsComponent implements OnInit {
+export class GaugeChartsComponent implements OnInit, OnDestroy {
+  ngOnDestroy(): void {
+    console.log('destroyed');
+    clearInterval(this.interval);
+  }
   memory = signal(0);
   data = [
     ['Memory', 0],
@@ -25,9 +29,11 @@ export class GaugeChartsComponent implements OnInit {
     yellowTo: 90,
     minorTicks: 5,
   };
+  interval: any;
 
   ngOnInit() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
+      console.log('hi');
       var random = Math.floor(Math.random() * 100);
       var random2 = Math.floor(Math.random() * 100);
       var random3 = Math.floor(Math.random() * 100);
