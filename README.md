@@ -7,7 +7,7 @@ Exploring charts and visualizations with Google Charts.
 To start a local development server, run:
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
@@ -17,7 +17,7 @@ Once the server is running, open your browser and navigate to `http://localhost:
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
 ```bash
-pnpm test
+npm test
 ```
 
 ### Running end-to-end tests
@@ -25,7 +25,7 @@ pnpm test
 For end-to-end (e2e) testing, run:
 
 ```bash
-pnpm e2e
+npm run e2e
 ```
 
 ### Build for production
@@ -33,7 +33,7 @@ pnpm e2e
 To build the project into JavaScript artifacts for production, run the command:
 
 ```
-pnpm build
+npm run build
 ```
 
 ## Useful Resources
@@ -43,3 +43,4 @@ pnpm build
 - [Google Charts](https://developers.google.com/chart)
 - [React Google Charts](https://www.react-google-charts.com/)
 - [The Data Visualisation Catalogue](https://datavizcatalogue.com/)
+- [Amcharts5](https://github.com/amcharts/amcharts5)

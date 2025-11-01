@@ -8,14 +8,12 @@ trigger:
 
 pool: default
 
-variables:
-  pnpm_config_cache: $(Pipeline.Workspace)/.pnpm-store
-
 steps:
   - task: CmdLine@2
     inputs:
       script: |
-        echo  '$(System.DefaultWorkingDirectory)'
+        echo  'Default Working Directory: $(System.DefaultWorkingDirectory)'
+        echo  'Pipeline Workspace: $(Pipeline.Workspace)'
         dir
     displayName: Show working directory
 
@@ -24,28 +22,14 @@ steps:
       versionSpec: '22.x'
     displayName: 'Install Node.js'
 
-  - task: Cache@2
-    inputs:
-      key: 'pnpm | "$(Agent.OS)" | $(System.DefaultWorkingDirectory)/pnpm-lock.yaml'
-      path: $(pnpm_config_cache)
-    displayName: Cache pnpm
-
   - script: |
-      corepack enable
-      corepack prepare pnpm@latest-9 --activate
-    displayName: 'Setup pnpm'
-
-  - script: pnpm config set store-dir $(pnpm_config_cache)
-    displayName: 'Set pnpm store directory'
-
-  - script: |
-      pnpm install
+      npm install
     displayName: 'Install dependencies'
 
   - script: |
-      pnpm test:headless
+      npm run test:headless
     displayName: 'Run headless unit tests'
 
   - script: |
-      pnpm build
+      npm run build
     displayName: 'Build for production'
