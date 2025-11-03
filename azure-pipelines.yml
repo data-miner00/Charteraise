@@ -33,3 +33,15 @@ steps:
   - script: |
       npm run build
     displayName: 'Build for production'
+
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: 'dist/charteraise/browser/**'
+      Contents: '**/*'
+      TargetFolder: drop
+    displayName: 'Copy files to drop folder'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+    inputs:
+      PathtoPublish: drop
