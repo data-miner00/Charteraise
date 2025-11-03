@@ -36,7 +36,7 @@ steps:
 
   - task: CopyFiles@2
     inputs:
-      SourceFolder: 'dist/charteraise/browser/**'
+      SourceFolder: 'dist/charteraise/browser'
       Contents: '**/*'
       TargetFolder: drop
     displayName: 'Copy files to drop folder'
