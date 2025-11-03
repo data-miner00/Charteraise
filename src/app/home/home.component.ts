@@ -47,15 +47,6 @@ export class HomeComponent implements OnInit {
     colors: ['#422ad5', '#f43098'],
   };
 
-  cpuMemorySignal = signal(6);
-  cpuMemoryData = [
-    [1, 3000, 1],
-    [2, 3600, 10],
-    [3, 3800, 7],
-    [4, 4100, 5],
-    [5, 5000, 1],
-    [6, 5000, 16],
-  ];
   cpuMemoryOptions = {
     series: {
       0: { targetAxisIndex: 0 },
@@ -98,24 +89,4 @@ export class HomeComponent implements OnInit {
   geoChartOptions = {
     width: 1000,
   };
-
-  refreshData() {
-    this.counter.update((c) => c + 1);
-    this.data = [
-      ...this.data.slice(1),
-      [this.counter(), ~~(Math.random() * 30)],
-    ];
-  }
-
-  refreshCpuMemoryData() {
-    this.cpuMemorySignal.update((c) => c + 1);
-    this.cpuMemoryData = [
-      ...this.cpuMemoryData.slice(1),
-      [
-        this.cpuMemorySignal(),
-        ~~(Math.random() * 12000),
-        ~~(Math.random() * 100),
-      ],
-    ];
-  }
 }
