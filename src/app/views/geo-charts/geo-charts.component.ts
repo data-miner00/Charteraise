@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
+import countries from '../../../data/countries.json';
+
 @Component({
   selector: 'app-geo-charts',
   imports: [GoogleChartsModule],
@@ -33,4 +35,14 @@ export class GeoChartsComponent {
     defaultColor: '#fde047',
     datalessRegionColor: '#fecaca',
   };
+
+  // Reference: https://www.worldstandards.eu/cars/list-of-left-driving-countries/
+  driveSideChartOptions = {
+    colorAxis: { colors: ['red', 'blue'] },
+    width: 1000,
+  };
+  driveSideChartColumns = ['Country', 'Driving Side'];
+  driveSideChartData = countries.map((country) => {
+    return [country.iso_2, country.driving_side === 'left' ? 1 : 0];
+  });
 }
