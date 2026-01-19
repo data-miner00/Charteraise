@@ -12,5 +12,5 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Charteraise';
+  title = 'Chârteraisé';
 }

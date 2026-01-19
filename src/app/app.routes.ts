@@ -11,7 +11,7 @@ import { PieChartsComponent } from './views/pie-charts/pie-charts.component';
 export const routes: Routes = [
   {
     path: '',
-    title: 'Home | Charteraise',
+    title: 'Home | Chârteraisé',
     component: HomeComponent,
   },
   {
@@ -20,32 +20,32 @@ export const routes: Routes = [
   },
   {
     path: 'pie-charts',
-    title: 'Pie Charts | Charteraise',
+    title: 'Pie Charts | Chârteraisé',
     component: PieChartsComponent,
   },
   {
     path: 'bar-charts',
-    title: 'Bar Charts | Charteraise',
+    title: 'Bar Charts | Chârteraisé',
     component: BarChartsComponent,
   },
   {
     path: 'gauge-charts',
-    title: 'Gauge Charts | Charteraise',
+    title: 'Gauge Charts | Chârteraisé',
     component: GaugeChartsComponent,
   },
   {
     path: 'line-charts',
-    title: 'Line Charts | Charteraise',
+    title: 'Line Charts | Chârteraisé',
     component: LineChartsComponent,
   },
   {
     path: 'geo-charts',
-    title: 'Geo Charts | Charteraise',
+    title: 'Geo Charts | Chârteraisé',
     component: GeoChartsComponent,
   },
   {
     path: 'histograms',
-    title: 'Histograms | Charteraise',
+    title: 'Histograms | Chârteraisé',
     component: HistogramsComponent,
   },
 ];

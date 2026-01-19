@@ -9,7 +9,6 @@ import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 })
 export class GaugeChartsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
-    console.log('destroyed');
     clearInterval(this.interval);
   }
   memory = signal(0);
@@ -33,7 +32,6 @@ export class GaugeChartsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.interval = setInterval(() => {
-      console.log('hi');
       var random = Math.floor(Math.random() * 100);
       var random2 = Math.floor(Math.random() * 100);
       var random3 = Math.floor(Math.random() * 100);
