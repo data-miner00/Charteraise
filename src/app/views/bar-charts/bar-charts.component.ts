@@ -3,6 +3,7 @@ import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
   selector: 'app-bar-charts',
+  standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './bar-charts.component.html',
   styleUrl: './bar-charts.component.css',

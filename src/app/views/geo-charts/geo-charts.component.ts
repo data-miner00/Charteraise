@@ -5,6 +5,7 @@ import countries from '../../../data/countries.json';
 
 @Component({
   selector: 'app-geo-charts',
+  standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './geo-charts.component.html',
   styleUrl: './geo-charts.component.css',

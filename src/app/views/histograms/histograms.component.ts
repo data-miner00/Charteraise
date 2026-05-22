@@ -3,6 +3,7 @@ import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
   selector: 'app-histograms',
+  standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './histograms.component.html',
   styleUrl: './histograms.component.css',

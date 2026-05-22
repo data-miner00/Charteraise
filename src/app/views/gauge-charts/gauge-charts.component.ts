@@ -3,6 +3,7 @@ import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
   selector: 'app-gauge-charts',
+  standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './gauge-charts.component.html',
   styleUrl: './gauge-charts.component.css',

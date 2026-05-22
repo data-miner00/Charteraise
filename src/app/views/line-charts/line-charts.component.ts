@@ -1,9 +1,9 @@
-import { trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
   selector: 'app-line-charts',
+  standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './line-charts.component.html',
   styleUrl: './line-charts.component.css',

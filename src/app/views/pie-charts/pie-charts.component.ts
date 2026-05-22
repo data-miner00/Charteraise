@@ -10,6 +10,7 @@ type Chart = {
 
 @Component({
   selector: 'app-pie-charts',
+  standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './pie-charts.component.html',
   styleUrl: './pie-charts.component.css',
