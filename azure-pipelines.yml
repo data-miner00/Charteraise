@@ -23,7 +23,7 @@ steps:
     displayName: 'Install Node.js'
 
   - script: |
-      npm install
+      npm ci --legacy-peer-deps
     displayName: 'Install dependencies'
 
   - script: |
