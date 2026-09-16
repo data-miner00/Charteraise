@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 type Chart = {
@@ -13,6 +13,7 @@ type Chart = {
   standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './pie-charts.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './pie-charts.component.css',
 })
 export class PieChartsComponent {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
@@ -6,6 +6,7 @@ import { ChartType, GoogleChartsModule } from 'angular-google-charts';
   standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './bar-charts.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './bar-charts.component.css',
 })
 export class BarChartsComponent {

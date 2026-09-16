@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
@@ -6,6 +12,7 @@ import { ChartType, GoogleChartsModule } from 'angular-google-charts';
   standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './gauge-charts.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './gauge-charts.component.css',
 })
 export class GaugeChartsComponent implements OnInit, OnDestroy {

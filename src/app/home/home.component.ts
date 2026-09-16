@@ -1,4 +1,9 @@
-import { Component, OnInit, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
@@ -6,6 +11,7 @@ import { ChartType, GoogleChartsModule } from 'angular-google-charts';
   standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './home.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {

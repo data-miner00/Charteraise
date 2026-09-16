@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 import countries from '../../../data/countries.json';
@@ -8,6 +8,7 @@ import countries from '../../../data/countries.json';
   standalone: true,
   imports: [GoogleChartsModule],
   templateUrl: './geo-charts.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './geo-charts.component.css',
 })
 export class GeoChartsComponent {
