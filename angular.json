@@ -24,7 +24,10 @@
                 "input": "public"
               }
             ],
-            "styles": ["bootstrap-icons/font/bootstrap-icons.min.css", "src/styles.css"],
+            "styles": [
+              "bootstrap-icons/font/bootstrap-icons.min.css",
+              "src/styles.css"
+            ],
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": false,
@@ -84,7 +87,10 @@
                 "input": "public"
               }
             ],
-            "styles": ["bootstrap-icons/font/bootstrap-icons.min.css", "src/styles.css"],
+            "styles": [
+              "bootstrap-icons/font/bootstrap-icons.min.css",
+              "src/styles.css"
+            ],
             "scripts": [],
             "karmaConfig": "karma.conf.js"
           }
@@ -98,6 +104,12 @@
             "production": {
               "devServerTarget": "Charteraise:serve:production"
             }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
@@ -128,5 +140,8 @@
     "@schematics/angular:resolver": {
       "typeSeparator": "."
     }
+  },
+  "cli": {
+    "schematicCollections": ["angular-eslint"]
   }
 }
