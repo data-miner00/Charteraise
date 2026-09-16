@@ -1,13 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
-type Chart = {
-  data: any[];
-  columns: string[];
-  type: ChartType;
-  options: any;
-};
-
 @Component({
   selector: 'app-pie-charts',
   standalone: true,

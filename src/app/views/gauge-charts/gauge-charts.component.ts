@@ -36,13 +36,13 @@ export class GaugeChartsComponent implements OnInit, OnDestroy {
     yellowTo: 90,
     minorTicks: 5,
   };
-  interval: any;
+  interval: ReturnType<typeof setInterval> | undefined;
 
   ngOnInit() {
     this.interval = setInterval(() => {
-      var random = Math.floor(Math.random() * 100);
-      var random2 = Math.floor(Math.random() * 100);
-      var random3 = Math.floor(Math.random() * 100);
+      const random = Math.floor(Math.random() * 100);
+      const random2 = Math.floor(Math.random() * 100);
+      const random3 = Math.floor(Math.random() * 100);
       this.data = [
         ['Memory', random],
         ['CPU', random2],

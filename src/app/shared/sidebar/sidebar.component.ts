@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
-type Link = {
+interface Link {
   url: string;
   name: string;
   icon: string;
-};
+}
 
 @Component({
   selector: 'app-sidebar',

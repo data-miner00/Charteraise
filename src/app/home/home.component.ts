@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ChartType, GoogleChartsModule } from 'angular-google-charts';
 
 @Component({
@@ -14,14 +9,8 @@ import { ChartType, GoogleChartsModule } from 'angular-google-charts';
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   pieChartType = ChartType.PieChart;
-  ngOnInit(): void {
-    // setInterval(() => {
-    //   this.refreshData();
-    //   this.refreshCpuMemoryData();
-    // }, 1000);
-  }
   now = new Date();
   counter = signal(5);
   data = [

@@ -15,18 +15,6 @@ export class HistogramsComponent implements OnInit {
   data: number[][] = [];
 
   ngOnInit(): void {
-    const ageGroups = this.ages.reduce(
-      (acc, age) => {
-        const group = Math.floor(age / 10) * 10; // Group by decade
-        if (!acc[group]) {
-          acc[group] = 0;
-        }
-        acc[group]++;
-        return acc;
-      },
-      <{ [number: number]: number }>{}
-    );
-
     this.data = Object.values(this.ages).map((count) => [count]);
     this.columns = ['Age Group'];
   }
