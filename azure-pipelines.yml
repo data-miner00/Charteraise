@@ -19,7 +19,7 @@ steps:
 
   - task: UseNode@1
     inputs:
-      version: '22.x'
+      version: '22.22.3'
     displayName: 'Install Node.js'
 
   - script: |
